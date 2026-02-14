@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiseGroup</title>
+    <meta name="description" content="WiseGroup">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Michroma&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter Tight', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        logo: ['Michroma', 'sans-serif'],
+                    },
+                    colors: {
+                        bg: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .reveal-text {
+            animation: fadeIn 1.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .reveal-delay-1 { animation-delay: 0.2s; }
+        .reveal-delay-2 { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .glass-text {
+            background: linear-gradient(to right, #fff, #5d5d5d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #ffffff;
+        }
+        
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="fixed top-0 w-full z-50 p-6 mix-blend-difference text-white">
+        <div class="flex justify-between items-center max-w-[1800px] mx-auto">
+            <div class="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity cursor-default">
+                <span class="font-logo text-sm tracking-widest uppercase">WiseGroup</span>
+            </div>
+            
+            <button onclick="toggleContact()" class="text-[10px] font-mono opacity-50 hover:opacity-100 transition-opacity uppercase tracking-widest border border-white/20 px-3 py-1 rounded-full bg-transparent cursor-pointer">
+                Get in Touch
+            </button>
+        </div>
+    </header>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="wisebg3.jpg" class="w-full h-full object-cover opacity-20" alt="Abstract Dark Structure">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 aaavia-black/80 aaato-black"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <h1 class="font-sans text-3xl md:text-5xl lg:text-6xl font-light tracking-tight mb-8 reveal-text glass-text leading-[1.1] py-2">
+                New ways of training
+            </h1>
+            <p class="font-mono text-xs md:text-sm text-gray-500 max-w-md mx-auto leading-relaxed reveal-text reveal-delay-1">
+                We are building specialized tools for the next generation of athletes. Arriving soon.
+            </p>
+        </div>
+        <div class="absolute bottom-12 left-0 w-full flex justify-center reveal-text reveal-delay-2 opacity-50">
+            <span class="font-mono text-[10px] tracking-widest uppercase writing-vertical text-gray-600">Scroll</span>
+        </div>
+    </section>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden border-t border-white/5">
+        <div class="absolute inset-0 z-0">
+            <img src="photo-1620123646588-b9117246a9d0.avif" class="w-full h-full object-cover opacity-30 grayscale transition-all duration-1000 ease-in-out hover:opacity-40" alt="Fighter Focus">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-[1800px] px-6 md:px-12 h-full flex flex-col justify-end pb-24 md:justify-center md:pb-0">
+            <div class="md:grid md:grid-cols-2 md:items-center w-full">
+                <div>
+                    <span class="block text-red-600 font-mono text-[10px] tracking-[0.2em] mb-4">COGNITIVE COMBAT TRAINING</span>
+                    <h2 class="font-sans text-5xl md:text-8xl font-light tracking-tighter text-white">InStrike</h2>
+                </div>
+                <div class="mt-6 md:mt-0 md:pl-24 border-l border-white/10">
+                    <p class="text-lg md:text-xl font-light text-gray-300 max-w-md">Timing and right decision are everything</p>
+                    <p class="text-sm text-gray-500 mt-2 font-mono max-w-xs leading-relaxed">
+                        Upgrade your brain and muscle memory to excel in real-time. Your living room is your new dojo — train anytime.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden border-t border-white/5">
+        <div class="absolute inset-0 z-0">
+            <img src="goalie.jpg" class="w-full h-full object-cover opacity-30 grayscale transition-all duration-1000 ease-in-out hover:opacity-40" alt="Night Stadium">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-[1800px] px-6 md:px-12 h-full flex flex-col justify-end pb-24 md:justify-center md:pb-0">
+            <div class="md:grid md:grid-cols-2 md:items-center w-full">
+                <div class="md:order-2 md:text-right">
+                    <span class="block text-green-600 font-mono text-[10px] tracking-[0.2em] mb-4">GOALKEEPER COACHING EVOLVED</span>
+                    <h2 class="font-sans text-5xl md:text-8xl font-light tracking-tighter text-white">ProKeeper</h2>
+                </div>
+                <div class="mt-6 md:mt-0 md:order-1 md:flex md:flex-col md:items-end md:pr-24 border-l border-white/10 md:border-l-0 md:border-r">
+                    <p class="text-lg md:text-xl font-light text-gray-300 max-w-md md:text-right">Focus on the sport</p>
+                    <p class="text-sm text-gray-500 mt-2 font-mono max-w-xs md:text-right leading-relaxed">
+                        Athlete management, performance tracking, and video analysis. Automatic progress reports per athlete elevate your game.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 border-t border-white/5">
+        <div class="max-w-[1800px] mx-auto px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+            <div class="text-[10px] text-gray-600 font-mono space-y-1.5">
+                <p class="text-gray-400 uppercase tracking-widest mb-2">WiseGroup</p>
+                <p>38-212 Poland</p>
+                <p>PL6793141565</p>
+            </div>
+            <div class="flex gap-8 text-[10px] font-mono text-gray-500 uppercase tracking-widest">
+                <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="hover:text-white transition-colors">Privacy Policy</button>
+                <button onclick="toggleContact()" class="hover:text-white transition-colors">Contact</button>
+            </div>
+            <div class="text-[10px] text-gray-800 font-mono">
+                © 2026 WISEGROUP
+            </div>
+        </div>
+    </footer>
+
+    <div id="contact-overlay" class="fixed inset-0 z-[100] hidden bg-black flex flex-col items-center justify-center p-6 opacity-0 transition-opacity duration-500">
+        <button onclick="toggleContact()" class="absolute top-8 right-8 text-gray-500 hover:text-white transition-colors">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <div class="w-full max-w-lg">
+            <h2 class="font-sans font-light text-3xl md:text-4xl text-white mb-8 tracking-tight">Contact Us</h2>
+            
+            <form onsubmit="handleSubmit(event)" id="main-contact-form" class="space-y-6">
+                <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+
+                <div class="space-y-1">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Name</label>
+                    <input type="text" name="name" required class="w-full bg-transparent border-b border-white/20 py-2 text-white font-light focus:border-white transition-colors form-input placeholder-gray-800" placeholder="Your Name">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Email</label>
+                    <input type="email" name="email" required class="w-full bg-transparent border-b border-white/20 py-2 text-white font-light focus:border-white transition-colors form-input placeholder-gray-800" placeholder="email@address.com">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-gray-500">Message</label>
+                    <textarea name="message" required rows="4" class="w-full bg-transparent border-b border-white/20 py-2 text-white font-light focus:border-white transition-colors form-input resize-none placeholder-gray-800" placeholder="How can we help?"></textarea>
+                </div>
+
+                <div class="space-y-1 pt-2 min-h-[65px]">
+                     <div id="turnstile-widget" class="cf-turnstile" data-sitekey="YOUR_CLOUDFLARE_SITE_KEY" data-theme="dark"></div>
+                </div>
+
+                <button type="submit" id="submit-btn" class="mt-8 px-8 py-3 border border-white/20 rounded-full text-xs font-mono uppercase tracking-widest text-gray-300 hover:bg-white hover:text-black hover:border-white transition-all duration-300">
+                    Send Message
+                </button>
+            </form>
+
+            <div id="form-success" class="hidden mt-6 text-green-500 font-mono text-xs tracking-widest">
+                > Message received. We will be in touch shortly.
+            </div>
+            <div id="form-error" class="hidden mt-6 text-red-500 font-mono text-xs tracking-widest">
+                > Error sending message. Please try again.
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md flex items-center justify-center p-6">
+        <div class="max-w-md w-full border border-white/10 p-8 relative bg-black/50">
+            <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <h2 class="font-sans font-light text-2xl mb-8 text-white">Privacy Statement</h2>
+            <div class="space-y-4 text-sm text-gray-400 font-light leading-relaxed">
+                <p>WiseGroup respects your digital sovereignty. We do not collect personal data via this landing page.</p>
+                <p>Our products, including InStrike and ProKeeper, are designed with a "local-first" philosophy. Computer vision processing occurs on your device to ensure low latency and privacy.</p>
+                <p>We use Cloudflare Turnstile to protect our website from spam. It checks if a visitor is real without using tracking cookies. This processing is based on our legitimate interest in security (Art. 6(1)(f) GDPR).</p>
+                <p class="pt-4 border-t border-white/10 text-xs font-mono text-gray-600">
+                    For legal inquiries, use the contact form.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        let turnstileLoaded = false;
+
+        // Resource Optimization: Load script only when user clicks "Contact"
+        function loadTurnstileScript() {
+            if (turnstileLoaded) return;
+            
+            const script = document.createElement('script');
+            script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+            
+            turnstileLoaded = true;
+        }
+
+        function toggleContact() {
+            const overlay = document.getElementById('contact-overlay');
+            
+            if (overlay.classList.contains('hidden')) {
+                // 1. Show Overlay
+                overlay.classList.remove('hidden');
+                
+                // 2. Load Cloudflare Turnstile (Lazy Load)
+                loadTurnstileScript();
+
+                // 3. Fade in
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                }, 10);
+            } else {
+                overlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    // Reset UI states
+                    document.getElementById('main-contact-form').reset();
+                    document.getElementById('form-success').classList.add('hidden');
+                    document.getElementById('form-error').classList.add('hidden');
+                    document.getElementById('main-contact-form').style.display = 'block';
+                    
+                    // Reset Turnstile if loaded
+                    if (window.turnstile) {
+                        turnstile.reset();
+                    }
+                }, 500);
+            }
+        }
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const submitBtn = document.getElementById('submit-btn');
+            const errorMsg = document.getElementById('form-error');
+
+            // 1. Honeypot Check
+            if (form.elements['_gotcha'].value) {
+                console.log("Bot detected.");
+                return; // Silent fail
+            }
+
+            // 2. Get Form Data & Turnstile Token
+            const formData = new FormData(form);
+            const token = formData.get('cf-turnstile-response');
+
+            if (!token) {
+                alert("Please verify you are human.");
+                return;
+            }
+
+            // 3. UI Loading State
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "VERIFYING...";
+            submitBtn.disabled = true;
+            errorMsg.classList.add('hidden');
+
+            try {
+                // 4. Send to Google Cloud Function
+                const response = await fetch('https://cloudflare-turnstile-1002829026925.us-east1.run.app', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        token: token,
+                        // Pass other fields if your backend handles email sending
+                        email: formData.get('email'),
+                        name: formData.get('name'),
+                        message: formData.get('message')
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Success UI
+                    form.style.display = 'none';
+                    document.getElementById('form-success').classList.remove('hidden');
+                } else {
+                    throw new Error(result.message || "Verification failed");
+                }
+
+            } catch (err) {
+                console.error(err);
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+                errorMsg.classList.remove('hidden');
+                // Reset Turnstile so they can try again
+                if (window.turnstile) turnstile.reset();
+            }
+        }
+    </script>
+</body>
+</html>
